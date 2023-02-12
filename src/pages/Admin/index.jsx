@@ -67,10 +67,30 @@ function Admin() {
       console.log('Erro ao registrar')
     })
   }
+  // await signOut(auth)
+  function handleLogout(){
+    swal({
+      title: "Deseja sair?", 
+      
+      icon: "warning",
+      buttons: [true, "Sair"],
+      
+    })
+    .then((logout) => {
+      if (logout) {
+        swal( signOut(auth), {
+          icon: "success",
+        });
+      } else {
+        return;
+      }
+    });  
+     
+  }
 
-  async function handleLogout(){
-  await signOut(auth)
-}
+  
+
+
   
 
   async function deleteTask(id){

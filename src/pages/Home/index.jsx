@@ -9,14 +9,15 @@ import { useNavigate } from 'react-router-dom';
 export const Home = () =>{
     const[email, setEmail] = useState('')
     const[password, setPassword] = useState('')
+    const [name, setName] = useState('')
 
     const navigate = useNavigate()
 
     async function handleLogin(e){
         e.preventDefault()
-        if(email !=="" && password !==""){
+        if(email !=="" && password !=="" && name !==""){
             swal({
-                title: "Seja bem-vindo(a) aos sistema!",                
+                title: `${name}, Seja bem-vindo(a) ao sistema!`,                
                 icon: "success",
               })
            await signInWithEmailAndPassword(auth, email, password)
@@ -41,9 +42,16 @@ export const Home = () =>{
 
     return(
         <div className='home-container'>
-            <h1>Projeto Login com Firebase</h1>
+            <h1>LOGIN</h1>
 
             <form className='form' onSubmit={handleLogin}>
+                <input 
+                    type='text'
+                    value={name} 
+                    onChange={(e)=>setName(e.target.value)}
+                    placeholder='Digite seu Nome'
+                />
+
                 <input 
                     type='email'
                     value={email} 
