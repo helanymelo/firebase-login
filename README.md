@@ -19,3 +19,8 @@ Para acessar a lista de tarefas, o usuário precisa estar logado, caso não este
 
 Todos os inputs estão validados, ou seja, não será possível acessar às tarefas, caso não seja digitado e-mail e senha, não será possível adicionar tarefas, caso os inputs estejam em branco. Ao tentar acessar ou adicionar tarefas com inputs vazios um alert é emitido, comunicando ao usuário a falta de algum dado. Todos os alerts foram implementado utilizando o sweet alert: https://sweetalert.js.org/guides/
 
+## Deploy
+
+O deploy foi feito via linha de comando utilizando o netlify.
+Para verificar o resultado do projeto, acesse o link: [https://tasksreact-firebase.netlify.app/](https://tasksreact-firebase.netlify.app/)
+
